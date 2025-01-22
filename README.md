@@ -76,8 +76,45 @@ The repository is publicly accessible and includes the following:
    - created a index.js file.
 
 
-       
+# Milestone-3
 
+## Overview
+
+In Milestone-3, the following tasks were completed to enhance both the backend and frontend functionalities of the application:
+
+### Backend
+
+The backend structure was expanded and organized with the following directories and files:
+
+1. **Controls**
+
+2. **Config**
+
+3. **Models**
+
+4. **Node\_modules**
+
+5. **Routes**
+
+### Frontend
+
+The frontend development included the creation of a **Login Page** with the following features:
+
+1. **Fields**:
+
+   - **Name**
+   - **Email**
+   - **Password**
+
+2. **Functionality**:
+
+   - Input fields are controlled components, ensuring the state is managed properly.
+   - A "Login" button to submit the form data.
+   - Password visibility toggle functionality for better user experience.
+
+3. **Styling**:
+
+   - Custom CSS file (`login.css`) is used to style the login page for an intuitive and responsive design.
 
 
 
