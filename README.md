@@ -52,4 +52,32 @@ An E-Commerce application that allows users to browse products, add them to a sh
   - Version control: Git/GitHub
 
 
+# Milestone 2 Progress
+
+Pushed the code to a GitHub repository (which is created in the first milestone).
+
+The repository is publicly accessible and includes the following:
+
+1. **Separate folders for frontend and backend**
+
+   - `Frontend/` for the frontend code.
+   - `Backend/` for the backend code.
+
+2. **Creating a Login Page in the frontend:**
+
+   - Created a file login.jsx.
+
+3. **Installation of files in Backend:**
+
+   - Setting up backend folder.
+
+   - installed the Express framework, Mongoose for MongoDB, and Nodemon.
+
+   - created a index.js file.
+
+
+       
+
+
+
 
