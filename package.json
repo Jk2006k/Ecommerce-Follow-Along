@@ -1,0 +1,11 @@
+{
+  "name": "ecommerce-follow-along",
+  "version": "1.0.0",
+  "description": "An E-Commerce application that allows users to browse products, add them to a shopping cart, and complete purchases. The app includes features for user authentication, product management, and order tracking.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
