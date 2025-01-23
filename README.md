@@ -155,5 +155,28 @@ The frontend development included the creation of a **Login Page** with the foll
    - Configured routes to include the new Signup page.
    - Ensured seamless navigation between pages.
 
+---
+
+# Milestone-5
+
+# Sign Up Page
+
+In milestone 5 I created Sign Up page with an image upload feature. It allows users to input their name, email, and password, and also upload an image. The uploaded image is displayed as a small preview on the form.
+
+---
+
+## Features
+
+- **Input Fields**: Fields for name, email, and password.
+- **Image Upload**: Users can upload an image from their device.
+- **Image Preview**: Displays a small thumbnail of the uploaded image.
+- **Responsive Design**: The form is styled with CSS for a clean and user-friendly layout.
+
+---
+
+
+
+
+
 
 
