@@ -117,4 +117,43 @@ The frontend development included the creation of a **Login Page** with the foll
    - Custom CSS file (`login.css`) is used to style the login page for an intuitive and responsive design.
 
 
+# Milestone-4
+
+## Backend Folder
+
+### Features Implemented:
+
+1. **Setting up Multer for File Uploads**
+
+   - Configured Multer for handling file uploads efficiently.
+
+2. **Created the Following Files:**
+
+   - `db.js`
+   - `multer.js`
+   - `UserControllers.js`
+   - `UserModels.js`
+   - `Router.js`
+
+3. **Regex Validation for User Data:**
+
+   - Implemented validation logic to verify user data:
+     - **Name:** Ensures it meets specified character requirements.
+     - **Email:** Validates format for correct email structure.
+     - **Password:** Ensures strong passwords by matching predefined regex criteria.
+
+---
+
+## Frontend Folder
+
+### Features Implemented:
+
+1. **Created ********************************`signup.jsx`********************************:**
+
+2. **Added Routes in ********************************`app.jsx`********************************:**
+
+   - Configured routes to include the new Signup page.
+   - Ensured seamless navigation between pages.
+
+
 
