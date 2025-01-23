@@ -4,7 +4,6 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const Login = () => {
   const [formData, setFormData] = useState({ 
-    name: '',
     email: '',
     password: '',
   })
@@ -32,18 +31,8 @@ const togglePasswordVisibility = () => {
     <div className="login-container">
       <form onSubmit={handleSubmit} className="login-form">
         <h2>Login</h2>
-        <div className="input-group">
-          <label>Name</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            placeholder='Enter User name'
-          />
-        </div>
-        <div className="input-group">
+        
+      <div className="input-group">
 
           <label>Email</label>
           <input
