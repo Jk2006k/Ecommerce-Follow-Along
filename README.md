@@ -177,6 +177,18 @@ In milestone 5 I created Sign Up page with an image upload feature. It allows us
 
 
 
+---
+
+# Milestone-6
+
+---
+
+# User Signup with Password Hashing Using bcrypt
+
+This project demonstrates how to securely hash a user's password during the signup process and save the hashed password in the database instead of storing it in plain text. It uses bcrypt,
+a widely-used library for password hashing.
 
 
-
+**Installation of files in Backend:**
+1.bcryptjs
+2.jsonwebtoken
