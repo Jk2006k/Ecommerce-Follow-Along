@@ -190,5 +190,5 @@ a widely-used library for password hashing.
 
 
 **Installation of files in Backend:**
-1.bcryptjs
-2.jsonwebtoken
+- bcryptjs
+- jsonwebtoken
