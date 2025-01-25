@@ -185,7 +185,7 @@ In milestone 5 I created Sign Up page with an image upload feature. It allows us
 
 # User Signup with Password Hashing Using bcrypt
 
-This project demonstrates how to securely hash a user's password during the signup process and save the hashed password in the database instead of storing it in plain text. It uses bcrypt,
+In this milestone we securely hash a user's password during the signup process and save the hashed password in the database instead of storing it in plain text. It uses bcrypt,
 a widely-used library for password hashing.
 
 
@@ -211,3 +211,32 @@ a widely-used library for password hashing.
    - Hash the entered password using `bcrypt`.
    - Compare the hashed password with the one stored in the database for authentication.
 
+
+
+
+## Milestone-8
+
+
+# Card Component and Homepage Layout with Normal CSS
+
+## Overview
+In this milestone we will create a reusable *Card Component* to showcase products and display them on a *Homepage* using normal CSS. It focuses on building a clean, visually appealing, and responsive layout without relying on CSS frameworks.
+
+---
+
+## Features
+
+### 1. *Card Component*
+- Displays individual product details such as:
+  - Product name
+  - Product image
+  - Product price
+- Designed as a reusable component.
+- Styled using normal CSS for simplicity and flexibility.
+
+### 2. *Homepage Layout*
+- Organizes multiple product cards in a grid layout.
+- Fully responsive design using CSS Grid.
+- Clean and structured presentation for better user experience.
+
+---
