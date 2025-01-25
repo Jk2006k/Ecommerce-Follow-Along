@@ -242,11 +242,11 @@ In this milestone we will create a reusable *Card Component* to showcase product
 ---
 
 
-Here’s a sample structure for your README file, tailored to Milestone 9: Creating the form for products that takes multiple product images as input.
 
----
+
 
 # Milestone 9: Create the Form for Products with Multiple Image Inputs
+---
 
 ## Description
 
