@@ -240,3 +240,29 @@ In this milestone we will create a reusable *Card Component* to showcase product
 - Clean and structured presentation for better user experience.
 
 ---
+
+
+Here’s a sample structure for your README file, tailored to Milestone 9: Creating the form for products that takes multiple product images as input.
+
+---
+
+# Milestone 9: Create the Form for Products with Multiple Image Inputs
+
+## Description
+
+
+This milestone involves creating a form that allows users to submit product details, including multiple product images. The form will be user-friendly and capable of handling various types of product data and images efficiently.
+
+## Features
+
+- **Product Name**: Field to input the product's name.
+
+- **Product Description**: Field for entering a description of the product.
+
+- **Product Price**: Field for entering the product’s price.
+
+- **Product Category**: Dropdown or selector to categorize the product.
+
+- **Product Images**: Field for uploading multiple images of the product.
+
+
