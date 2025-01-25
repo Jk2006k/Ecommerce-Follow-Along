@@ -192,3 +192,22 @@ a widely-used library for password hashing.
 **Installation of files in Backend:**
 - bcryptjs
 - jsonwebtoken
+
+
+---
+
+
+# Milestone 7: Login Endpoint
+
+---
+
+## Main Concepts
+
+### 1. **Create Login Endpoint**
+   - Accept user credentials (email and password).
+   - Retrieve the corresponding user from the database using the provided credentials.
+
+### 2. **Validate Password**
+   - Hash the entered password using `bcrypt`.
+   - Compare the hashed password with the one stored in the database for authentication.
+
