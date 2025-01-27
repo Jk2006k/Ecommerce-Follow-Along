@@ -64,6 +64,7 @@ const ProductForm = () => {
       <div className="form-group">
         <label htmlFor="name">Product Name</label>
         <input
+          placeholder="Name"
           type="text"
           id="name"
           name="name"
@@ -74,8 +75,22 @@ const ProductForm = () => {
       </div>
 
       <div className="form-group">
+        <label htmlFor="name">Product Category</label>
+
+        <select name="Category" placeholder="Select the category" id="Category">
+          <option value=" "> </option>
+          <option value="Mechanical Watch">Mechanical Watch</option>
+          <option value="Automatic Watch">Automatic Watch</option>
+          <option value="Quartz Watch">Quartz Watch</option>
+          <option value="Smart Watch">Smart Watch</option>
+          <option value="Others">Others</option>
+        </select>
+      </div>
+
+      <div className="form-group">
         <label htmlFor="description">Description</label>
         <input
+        placeholder="Description"
           id="description"
           name="description"
           value={formData.description}
@@ -87,6 +102,7 @@ const ProductForm = () => {
       <div className="form-group">
         <label htmlFor="price">Price</label>
         <input
+        placeholder="Price"
           type="number"
           id="price"
           name="price"
@@ -99,6 +115,7 @@ const ProductForm = () => {
       <div className="form-group">
         <label htmlFor="stock">Stock</label>
         <input
+        placeholder="Stock"
           type="number"
           id="stock"
           name="stock"

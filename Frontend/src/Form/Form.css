@@ -74,3 +74,14 @@
     background-color: aliceblue;
     color: #060606;
   }
+
+
+  .form-group select{
+    width: 420px;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 16px;
+    color: rgb(8, 8, 8);
+    background-color: aliceblue;
+  }

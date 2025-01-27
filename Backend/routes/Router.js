@@ -1,5 +1,4 @@
 const express=require('express');
-
 const router=express.Router();
 const{login,signUp}=require('../controllers/UserControllers');
 const { upload } = require('../config/multer');

@@ -4,19 +4,24 @@ const jwt=require('jsonwebtoken')
 
 const signUp= async (req,res)=>{
     try{
+
         const{name,email,password}=req.body;
         const user=await User.findOne({email});
+        
         if(user){
             res.status(400).send('User Already Exits')
         }
         const hashedpassword=await bcrypt.hash(password,10)
         const newUser=new User({
-            name,email,password:hashedpassword
+            name,email,password:hashedpassword,img:req.file.filename
         })
+        
         await newUser.save();
+        
         res.status(200).send('New user created ')
     }catch(error){
-        res.status(300).send(error.message)
+        console.log("error in signup:",error)    
+        res.status(500).send(error.message);
     }
 }
 const login=async(req,res)=>{
@@ -35,9 +40,17 @@ const login=async(req,res)=>{
         
 
     }catch(error){
+        console.log("error in login:",error)
         return res.status(500).send("Invalid User")
     }
 }
 
 
+
+
+
+
 module.exports={login,signUp};
+
+
+

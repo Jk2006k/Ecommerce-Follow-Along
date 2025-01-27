@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import './Signup.css'
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+
 
 const SignUp = () => {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,23 +17,30 @@ const SignUp = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    
   };
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        setFormData({ ...formData, image: file, imagePreview: reader.result });
-      };
-      reader.readAsDataURL(file);
-    }
+        setFormData({ ...formData, image: file, imagePreview: formData.image });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log("Form Data Submitted:", formData);
-    // Handle form submission logic here
+    const formDataToSend = new FormData();
+    
+    formDataToSend.append('name', formData.name);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('password', formData.password);
+    formDataToSend.append('file', formData.image);
+    console.log("Form Data Submitted:", formDataToSend);
+    try {
+      const res = await axios.post('http://localhost:3000/api/signup', formDataToSend);
+      console.log('User created successfully');
+      navigate('/login');
+    } catch (error) {
+      console.log('Error in submitting the form', error.message);
+    }
   };
 
   return (
