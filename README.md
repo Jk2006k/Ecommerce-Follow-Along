@@ -265,4 +265,59 @@ This milestone involves creating a form that allows users to submit product deta
 
 - **Product Images**: Field for uploading multiple images of the product.
 
+---
 
+
+# Milestone-10
+
+
+---
+
+## Overview  
+This milestone involves creating a product schema, building a POST endpoint to manage product data, and implementing navigation from the signup page to the login page using Axios.
+
+---
+
+## Features  
+
+### 1. Product Schema  
+- Designed the product data structure using **Mongoose**.  
+- Key fields include:  
+  - `name`: String (required)  
+  - `description`: String (required)
+  - `price`: Number (required)  
+  - `stock`: Number (required)  
+  - `image URL`: String (required)
+
+### 2. Endpoint Creation  
+- Developed a **POST endpoint** to handle product data:  
+  - Receives product details via the request body.  
+  - Validates incoming data.  
+  - Saves validated product data to the MongoDB database.  
+
+### 3. Axios Integration  
+- Installed **Axios** for making HTTP requests.  
+- Created a POST request to navigate from the signup page to the login page after successful form submission.  
+
+### 4. Middleware Integration  
+- Used **Body-Parser** in `index.js` to parse incoming request bodies.  
+
+---
+
+## Project Structure  
+
+### Key Files:  
+- **`formcontrollers.js`**  
+
+- **`formmodels.js`**    
+
+- **`formroutes.js`**  
+
+---
+
+## Dependencies  
+- **Mongoose** 
+- **Axios** 
+- **Body-Parser** 
+
+---

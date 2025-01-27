@@ -7,15 +7,13 @@ import ProductForm from './Form/Form';
 const App =()=>{
   return(
     <BrowserRouter>
-    <Routes>
-      <Route/>
-      <Route path='/signup' element={<Signup/>}/>
-      <Route path='/login' element={<Login/>}/>
-      <Route path='/' element={<Homepage/>}/>
-      <Route path='/form' element={<ProductForm/>}/>
-      
+      <Routes>
+        <Route path='/signup' element={<Signup/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/' element={<Homepage/>}/>
+        <Route path='/form' element={<ProductForm/>}/>
       </Routes>
-      </BrowserRouter>
+    </BrowserRouter>
     
   )
 

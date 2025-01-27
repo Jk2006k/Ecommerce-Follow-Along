@@ -14,14 +14,17 @@ const UserSchema= new mongoose.Schema({
     password:{
         type:String,
         required:true,
-        minlenght:[8,'The minimun digit sholud be 8'],
+        minlength:[8,'The minimun digit should be 8'],
         validate:{
             validator:ValidatePasword,
             message:"Enter a strong Password"
             
         }
+    },img:{
+        type:String,
+        required:true
     }
-})
+});
 
 function ValidatePasword(password){
     return(
@@ -32,6 +35,7 @@ function ValidatePasword(password){
 
     )
 };
+
 
 module.exports=mongoose.model("User",UserSchema);
 
