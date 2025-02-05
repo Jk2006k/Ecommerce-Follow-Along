@@ -334,3 +334,18 @@ This milestone involves creating an API endpoint to fetch product data from Mong
 - **Component:** ProductCard component to render each product.
 
 ---
+
+
+# Milestone 12:Display the data in cards
+
+---
+
+The(MongoDB, Express, React, Node.js) application that allows users to fetch and display product data dynamically based on their email.
+
+## Features
+- Backend API to fetch products based on user email
+- Frontend function to fetch data and display it using a Product Card component
+- Uses MongoDB for data storage
+
+
+
