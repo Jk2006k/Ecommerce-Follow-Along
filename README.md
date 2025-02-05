@@ -331,6 +331,6 @@ This milestone involves creating an API endpoint to fetch product data from Mong
 ## Features Implemented
 - **Backend:** API endpoint to retrieve product data.
 - **Frontend:** Fetching data from the backend and dynamically displaying it.
-- **Component:** ProductCard component to render each product.
+- **Component:** ProductCard component to render each `product`.
 
 ---
