@@ -321,3 +321,16 @@ This milestone involves creating a product schema, building a POST endpoint to m
 - **Body-Parser** 
 
 ---
+
+
+# Milestone 11: Fetch and Display Product Data
+
+## Overview
+This milestone involves creating an API endpoint to fetch product data from MongoDB, retrieving the data in the React frontend, and displaying it dynamically using a product card component.
+
+## Features Implemented
+- **Backend:** API endpoint to retrieve product data.
+- **Frontend:** Fetching data from the backend and dynamically displaying it.
+- **Component:** ProductCard component to render each product.
+
+---

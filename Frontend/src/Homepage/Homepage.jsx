@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useEffect,useState}from 'react';
 import Card from './productCard';
 import './Homepage.css'
 
@@ -11,15 +11,32 @@ const products = [
 ];
 
 const Homepage = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/forms/get');
+        const data = await response.json();
+        setProducts(data);
+        console.log(products)
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <div className="homepage">
       <h1>Featured Products</h1>
       <div className="product-grid">
-        {products.map(product => (
+      {Array.isArray(products) && products.map(product => (
           <Card
-            key={product.id}
+            key={product._id}
             name={product.name}
-            image={product.image}
+            image={product.imgUrl}
             price={product.price}
           />
         ))}
