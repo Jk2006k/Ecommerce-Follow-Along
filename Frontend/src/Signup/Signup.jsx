@@ -41,7 +41,7 @@ const SignUp = () => {
       console.log('Error in submitting the form', error.message);
     }
   };
-
+  
   return (
     <div className="signup-container">
       <form className="signup-form" onSubmit={handleSubmit}>
