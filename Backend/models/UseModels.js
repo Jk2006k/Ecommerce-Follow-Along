@@ -6,11 +6,13 @@ const UserSchema= new mongoose.Schema({
         required:true,
         match:[/^[a-zA-Z0-9 ]+$/,"User Name Invalid"]
     },
+
     email:{
         type:String,
         required:true,
         match:[/^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$/,"Email Is Invaid"]
     },
+
     password:{
         type:String,
         required:true,
@@ -20,11 +22,15 @@ const UserSchema= new mongoose.Schema({
             message:"Enter a strong Password"
             
         }
-    },img:{
+    },
+    
+    img:{
         type:String,
         required:true
     }
 });
+
+
 
 function ValidatePasword(password){
     return(

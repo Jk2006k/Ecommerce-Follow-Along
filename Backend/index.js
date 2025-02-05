@@ -23,12 +23,14 @@ app.get('/',  (req, res) =>{
 });
 
 app.listen(PORT, async ()=>{
+    
     try {
         await connectDB();
         console.log(`Server is Running at ${PORT}`)
     } catch (error) {
         console.log("Server error", error);
         res.status(500).send("Server error");
-    }
+    }
 })
+
 

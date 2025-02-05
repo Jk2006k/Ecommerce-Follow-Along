@@ -14,7 +14,6 @@ const App =()=>{
         <Route path='/form' element={<ProductForm/>}/>
       </Routes>
     </BrowserRouter>
-    
   )
 
 }

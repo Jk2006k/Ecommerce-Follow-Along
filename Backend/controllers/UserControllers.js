@@ -11,6 +11,7 @@ const signUp= async (req,res)=>{
         if(user){
             res.status(400).send('User Already Exits')
         }
+
         const hashedpassword=await bcrypt.hash(password,10)
         const newUser=new User({
             name,email,password:hashedpassword,img:req.file.filename
@@ -24,6 +25,7 @@ const signUp= async (req,res)=>{
         res.status(500).send(error.message);
     }
 }
+
 const login=async(req,res)=>{
     try{
         const{email,password}=req.body;
@@ -36,7 +38,7 @@ const login=async(req,res)=>{
             return res.status(500).send("Invalid User")
         }
         const token=await jwt.sign({_id:user._id,email:user.email},"secret",{expiresIn:"1h"})
-        return res.status(500).json({message:"sucessfully logged in ",token})
+        return res.status(200).json({message:"sucessfully logged in ",token})
         
 
     }catch(error){
