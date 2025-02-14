@@ -371,3 +371,33 @@ You can see a delete button in myproduct page if i click on that button the  ale
 
 - Users can delete their own product  
 
+
+
+# Milestone 15 - Navbar Component Development 
+
+
+
+### 1. Created a New Navbar Component
+
+- Developed a separate `Nav` component to handle site navigation.
+- Include links to all essential pages:
+  - **Home**
+  - **My Products**
+  - **Add Product**
+  - **Cart**
+
+### 2.  Responsive Design
+
+- Implement **CSS media queries** to adjust styling for various screen sizes.
+- Use **flexbox or grid** for proper alignment and spacing.
+
+### 3. Integration with React Router
+
+- Use `react-router-dom` to enable navigation without page refresh.
+- Apply `NavLink` to highlight the active page dynamically.
+
+## Expected Outcome 
+
+- A fully responsive and functional Navbar component.
+- Easy navigation across all application pages.
+
