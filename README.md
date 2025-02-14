@@ -361,3 +361,13 @@ This document provides guidelines on how to write an endpoint to update existing
 - The React form auto-fills with existing data when a product is edited.
 - Users can modify fields and submit the updated details back to MongoDB.
 
+# Milestone-14 : Delete the product
+
+## Introduction 
+
+You can see a delete button in myproduct page if i click on that button the  alert will be shown as do you want to delete aure about deletion if you press ok the product will get removed from both homepage as well as the my product page .
+
+## Conclution
+
+- Users can delete their own product  
+
