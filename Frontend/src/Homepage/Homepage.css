@@ -1,18 +1,114 @@
+/* Ensure styles only apply to the homepage */
 .homepage {
-    padding: 20px;
-    text-align: center;
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px; /* Ensures content starts below navbar */
+}
+
+/* Navbar (Fixed to Top) */
+.homepage .topper {
+  background-color: #333;  /* Dark navbar for visibility */
+  color: white;
+  height: 70px;
+  padding: 15px 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Navbar Links */
+.homepage .nav a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;  /* Ensure links are visible */
+  margin: 0 15px;
+  transition: color 0.3s ease-in-out;
+}
+
+.homepage .nav a:hover {
+  color: #ffcc00;  /* Highlight color */
+}
+
+/* Watch Loft Heading */
+.homepage .Heading {
+  font-size: 32px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 20px;
+  margin-top: 80px; /* Push below navbar */
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: url('/hero-image.jpg') center/cover no-repeat;
+  width: 100%;
+  color: white;
+  margin-bottom: 40px; /* Prevent overlap with content */
+}
+
+.hero-section h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Product Card */
+.product-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section h2 {
+      font-size: 28px;
+  }
+  
+  .hero-section p {
+      font-size: 16px;
   }
   
   .product-grid {
-    display: flex;
-    
-    gap: 40px;
-    justify-items: center;
-    margin-top: 150px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
-  
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
+}

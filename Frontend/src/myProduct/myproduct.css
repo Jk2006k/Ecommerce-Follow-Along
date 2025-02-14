@@ -1,0 +1,102 @@
+/* Product Grid */
+.product-grid {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 180px;
+  flex-wrap: wrap;
+}
+
+/* Product Card */
+.product-card {
+  position: relative;
+  width: 280px; /* Slightly larger for better visibility */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-5px); /* Subtle hover effect */
+}
+
+/* Product Image */
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Product Name */
+.card-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #333;
+}
+
+/* Product Description */
+.card-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 8px 0;
+}
+
+/* Product Price */
+.card-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+/* Action Buttons (Edit & Delete) */
+.card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.edit-button,
+.delete-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+
+.delete-button {
+  background-color: #dc3546d0;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #b02a37;
+}
+
+.delete-button edit{
+  background-color: #dc3546d0;
+  color: white;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-grid {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .product-card {
+      width: 90%;
+  }
+}

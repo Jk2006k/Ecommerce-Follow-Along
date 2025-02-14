@@ -1,87 +1,129 @@
 .product-form {
-    width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color:rgb(255, 255, 255);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    padding-right: 40px;
-  }
-  
-  .form-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
-    color: black;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  .image-preview {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
-  .preview-img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .submit-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #060606;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .submit-button:hover {
-    background-color: #615f5f85;
-  }
+  width: 350px;
+  margin: 80px auto 20px; /* Adjusted to ensure 10px gap below the topper */
+  /* padding: 5px; Reduce padding to make form smaller */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: rgba(255, 197, 197, 0.448);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  padding-right: 40px;
+  padding-left: 10px;
+} 
 
-  input{
-    background-color: aliceblue;
-    color: #060606;
-  }
+.topper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #fcc2c248;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  color: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 60px;
+} 
 
+.Heading {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000000;
+  margin: 0;
+}
 
-  .form-group select{
-    width: 420px;
-    padding: 10px;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    font-size: 16px;
-    color: rgb(8, 8, 8);
-    background-color: aliceblue;
-  }
+.nav {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  right: 50px;
+  color: #000000;
+
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav a:hover {
+  color: #4142439f;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.image-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.preview-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #060606;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+
+.submit-button:hover {
+  background-color: #615f5f85;
+}
+
+input {
+  background-color: aliceblue;
+  color: #060606;
+}
+
+.form-group select {
+  width: 420px;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  font-size: 16px;
+  color: rgb(8, 8, 8);
+  background-color: aliceblue;
+}
+
+.form-title{
+  text-align: center;
+}

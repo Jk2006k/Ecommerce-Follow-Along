@@ -1,45 +1,69 @@
-import React ,{useEffect,useState}from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from './productCard';
-import './Homepage.css'
-
-const products = [
-  { id: 1, name: 'Product 1', image: 'https://ae01.alicdn.com/kf/HTB1HFhxqMKTBuNkSne1q6yJoXXaI/New-Eyki-Men-Women-Business-Couple-Watch-Stainless-Steel-Case-Wrist-Watches-Luxury-Brand-Lovers-Watch.jpg ', price: 25 },
-  { id: 2, name: 'Product 2', image: 'https://ae01.alicdn.com/kf/HTB1HFhxqMKTBuNkSne1q6yJoXXaI/New-Eyki-Men-Women-Business-Couple-Watch-Stainless-Steel-Case-Wrist-Watches-Luxury-Brand-Lovers-Watch.jpg ', price: 35 },
-  { id: 3, name: 'Product 3', image: 'https://ae01.alicdn.com/kf/HTB1HFhxqMKTBuNkSne1q6yJoXXaI/New-Eyki-Men-Women-Business-Couple-Watch-Stainless-Steel-Case-Wrist-Watches-Luxury-Brand-Lovers-Watch.jpg ', price: 45 },
-  { id: 4, name: 'Product 4', image: 'https://ae01.alicdn.com/kf/HTB1HFhxqMKTBuNkSne1q6yJoXXaI/New-Eyki-Men-Women-Business-Couple-Watch-Stainless-Steel-Case-Wrist-Watches-Luxury-Brand-Lovers-Watch.jpg ', price: 55 },
-  
-];
+import './Homepage.css';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import Navbar from "../Navbar";
 
 const Homepage = () => {
   const [products, setProducts] = useState([]);
+  const token = localStorage.getItem('authToken');
 
+  // Fetch products when the component is mounted
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch('http://localhost:3000/forms/get');
-        const data = await response.json();
-        setProducts(data);
-        console.log(products)
-      } catch (error) {
-        console.error('Error fetching products:', error);
-      }
-    };
-
     fetchProducts();
   }, []);
 
+  const fetchProducts = async () => {
+    try {
+      console.log("Fetching products...");
+      const response = await axios.get('http://localhost:3000/forms/get', {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+
+      console.log("Fetched products:", response.data);
+      setProducts(response.data);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  };
+
+  // Handle Delete Function
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3000/forms/${id}`, {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+      
+      setProducts(products.filter((product) => product._id !== id));
+    } catch (error) {
+      console.error("Error deleting product:", error);
+    }
+  };
+
   return (
     <div className="homepage">
-      <h1>Featured Products</h1>
+      <h1 className="Heading">Watch Loft</h1>  
+
+      <Navbar />
+
+      {/* Product Grid */}
       <div className="product-grid">
-      {Array.isArray(products) && products.map(product => (
-          <Card
-            key={product._id}
-            name={product.name}
-            image={product.imgUrl}
-            price={product.price}
-          />
-        ))}
+        {Array.isArray(products) && products.length > 0 ? (
+          products.map((product) => (
+            <Card
+              key={product._id}
+              id={product._id}
+              name={product.name}
+              image={product.imgUrl && product.imgUrl.length > 0 ? `http://localhost:3000${product.imgUrl[0]}` : '/default.jpg'}
+              price={product.price}
+              description={product.description}
+              showActions={false} // No delete button on homepage
+            />
+          ))
+        ) : (
+          <p>No products available.</p>
+        )}
       </div>
     </div>
   );

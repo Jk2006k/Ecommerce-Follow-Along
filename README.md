@@ -349,3 +349,15 @@ The(MongoDB, Express, React, Node.js) application that allows users to fetch and
 
 
 
+# Milestone-13: Updating Existing Data in MongoDB & Auto-filling Forms for Editing
+
+## Introduction
+This document provides guidelines on how to write an endpoint to update existing data in MongoDB and how to auto-fill a form with previous data to allow editing.if the edit button in my product section is clicked it navigate to the form where all the data's already entered will be shown and if you save the changes it will get updated to the homepage as well as to the my product page.
+
+
+
+## Conclusion
+- The Express.js `PUT` endpoint allows updating MongoDB data.
+- The React form auto-fills with existing data when a product is edited.
+- Users can modify fields and submit the updated details back to MongoDB.
+

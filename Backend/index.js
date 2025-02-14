@@ -2,6 +2,7 @@ const express  = require('express')
 const cors = require('cors');
 const connectDB = require('./config/db')
 const app = express()
+const path = require('path')
 const PORT = 3000
 const userRouter=require('./routes/Router')
 const formroute=require('./routes/formRouter')
@@ -12,7 +13,7 @@ app.use(bodyParser.json());
 app.use(express.json())
 app.use("/api",userRouter)
 app.use('/forms',formroute)
-app.use('/uploads',express.static('uploads'))
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.get('/',  (req, res) =>{
     try {
