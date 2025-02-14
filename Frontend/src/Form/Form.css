@@ -1,7 +1,6 @@
 .product-form {
   width: 350px;
-  margin: 80px auto 20px; /* Adjusted to ensure 10px gap below the topper */
-  /* padding: 5px; Reduce padding to make form smaller */
+  margin: 80px auto 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
   background-color: rgba(255, 197, 197, 0.448);

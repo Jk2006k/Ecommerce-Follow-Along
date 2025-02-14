@@ -2,14 +2,14 @@ const Product = require('../models/FormModels');
 
 const createProduct = async (req, res) => {
     try {
-        console.log("Received request body:", req.body); // Debug request body
-        console.log("Received files:", req.files); // Debug uploaded files
+        console.log("Received request body:", req.body); 
+        console.log("Received files:", req.files);
 
         const name = req.body.name?.trim();
         const category = req.body.category?.trim();
-        const description = req.body['description ']?.trim() || req.body.description?.trim(); // Fix trailing space issue
-        const price = parseFloat(req.body.price); // Ensure number type
-        const stock = parseInt(req.body.stock, 10); // Ensure integer type
+        const description = req.body['description ']?.trim() || req.body.description?.trim();
+        const price = parseFloat(req.body.price); 
+        const stock = parseInt(req.body.stock, 10); 
 
         if (!name || !category || !description || !price || !stock) {
             return res.status(400).json({ message: "All fields are required" });
@@ -19,7 +19,6 @@ const createProduct = async (req, res) => {
             return res.status(400).json({ message: "At least one image is required" });
         }
 
-        // Extract image URLs from uploaded files
         const imgUrls = req.files.map(file => `/uploads/${file.filename}`);
         const userEmail = req.body.userEmail;
 

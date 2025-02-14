@@ -13,7 +13,7 @@ const Login = () => {
   const [errorMessage, setErrorMessage] = useState('');
 
   const togglePasswordVisibility = () => {
-    setIsPasswordVisible((prevState) => !prevState); // Toggle password visibility
+    setIsPasswordVisible((prevState) => !prevState); 
   };
 
   const handleChange = (e) => {

@@ -10,7 +10,6 @@ function Card({ id, name, description, image, price, showActions, onDelete, onEd
         <p className='card-description'>{description}</p>
         <p className="card-price">${price}</p>
 
-        {/* Conditional Rendering for Buttons */}
         <div className="card-actions">
           {showActions ? (
             <>
