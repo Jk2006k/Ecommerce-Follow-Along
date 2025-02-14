@@ -74,3 +74,26 @@
     background-color: #0056b3;
   }
   
+
+  .login-button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: skyblue;
+    border: none;
+    border-radius: 5px;
+    color: rgb(14, 13, 13);
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #0056b3; /* Darker green on hover */
+}
+
+
+.para{
+  color: black;
+}

@@ -26,8 +26,12 @@ const ProductSchema=new mongoose.Schema({
         required:true
     },
     imgUrl:{
-        type:String,
+        type:[String],
         required:true,
+    },
+    userEmail:{
+        type:String,
+        required:true
     }
 
 });

@@ -1,36 +1,109 @@
 .card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 16px;
-    width: 220px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    background-color: white;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
-  .card-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .card-info {
-    margin-top: 12px;
-  }
-  
-  .card-name {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: black;
-  }
-  
-  .card-price {
-    font-size: 16px;
-    color: black;
-  }
-  
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  width: 220px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  background-color: white;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.card-info {
+  margin-top: 12px;
+}
+
+.card-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: black;
+}
+
+.card-price {
+  font-size: 16px;
+  color: black;
+}
+.card-description{
+  font-size: 16px;
+  color: black;
+
+}
+
+
+
+.card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.addToCart,
+
+.delete-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.addToCart {
+  background-color: #28a745;
+  color: white;
+}
+
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.addToCart,
+
+.delete-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.addToCart {
+  background-color: #28a745;
+  color: white;
+}
+
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+  display: inline-block; /* Ensure button is visible */
+}
+
+.delete-button.edit{
+  background-color: rgb(74, 154, 157);
+  color: black;
+}
+
+.delete-button.edit:hover{
+  background-color: rgb(12, 239, 182);
+  color: black;
+}
