@@ -8,8 +8,6 @@ import Navbar from "../Navbar";
 const Homepage = () => {
   const [products, setProducts] = useState([]);
   const token = localStorage.getItem('authToken');
-
-  // Fetch products when the component is mounted
   useEffect(() => {
     fetchProducts();
   }, []);
@@ -28,26 +26,12 @@ const Homepage = () => {
     }
   };
 
-  // Handle Delete Function
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`http://localhost:3000/forms/${id}`, {
-        headers: { 'Authorization': `Bearer ${token}` }
-      });
-      
-      setProducts(products.filter((product) => product._id !== id));
-    } catch (error) {
-      console.error("Error deleting product:", error);
-    }
-  };
-
   return (
     <div className="homepage">
       <h1 className="Heading">Watch Loft</h1>  
 
       <Navbar />
 
-      {/* Product Grid */}
       <div className="product-grid">
         {Array.isArray(products) && products.length > 0 ? (
           products.map((product) => (
@@ -58,7 +42,7 @@ const Homepage = () => {
               image={product.imgUrl && product.imgUrl.length > 0 ? `http://localhost:3000${product.imgUrl[0]}` : '/default.jpg'}
               price={product.price}
               description={product.description}
-              showActions={false} // No delete button on homepage
+              showActions={false}
             />
           ))
         ) : (

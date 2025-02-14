@@ -31,7 +31,7 @@ const ProductForm = () => {
             description: data.data.description,
             price: data.data.price,
             stock: data.data.stock,
-            images: [], // Images will be handled separately
+            images: [],
           });
           const imagePreviews = data.data.imgUrl.map(
             (image) => (image.startsWith('http') ? image : `http://localhost:3000${image}`)

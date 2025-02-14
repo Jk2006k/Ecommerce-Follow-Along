@@ -95,7 +95,7 @@
 .delete-button {
   background-color: #dc3545;
   color: white;
-  display: inline-block; /* Ensure button is visible */
+  display: inline-block; 
 }
 
 .delete-button.edit{
