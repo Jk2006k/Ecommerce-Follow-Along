@@ -26,7 +26,7 @@ const Navbar = () => {
 export default Navbar
 
 const NavbarContainer = styled.div`
-    background-color: var(--secondary-color);
+   
     display: flex;
     justify-content: space-between;
     align-items: center;
