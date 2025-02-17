@@ -416,3 +416,19 @@ created a page were users can open and veiw the details of an product by clickin
 - Users can veiw the product details in good manner
 - Quantity increase and decrease and can use add to cart button.
 
+
+
+# Milestone-17 (Cart API Creation)
+
+## Overview
+
+In this milestone I have done implementing a simple cart functionality where users can add products to their cart and also remove the product from the cart. The cart stores only the product's name, price, quantity, and image.
+
+## Features
+
+- Users can add products to their cart.
+- Users can remove the Product from the cart
+- If a product already exists in the cart, its quantity will be updated.
+- The cart stores only `name`, `price`, `quantity`, and `image` for each item.
+
+##

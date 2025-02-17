@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Card from './productCard';
 import './Homepage.css';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from "../Navbar";
 
 const Homepage = () => {
   const [products, setProducts] = useState([]);
   const token = localStorage.getItem('authToken');
+
   useEffect(() => {
     fetchProducts();
   }, []);
@@ -35,15 +36,16 @@ const Homepage = () => {
       <div className="product-grid">
         {Array.isArray(products) && products.length > 0 ? (
           products.map((product) => (
-            <Card
-              key={product._id}
-              id={product._id}
-              name={product.name}
-              image={product.imgUrl && product.imgUrl.length > 0 ? `http://localhost:3000${product.imgUrl[0]}` : '/default.jpg'}
-              price={product.price}
-              description={product.description}
-              showActions={false}
-            />
+            <Link to={`/product/${product._id}`} key={product._id}>
+              <Card
+                id={product._id}
+                name={product.name}
+                image={product.imgUrl && product.imgUrl.length > 0 ? `http://localhost:3000${product.imgUrl[0]}` : '/default.jpg'}
+                price={product.price}
+                description={product.description}
+                showActions={false}
+              />
+            </Link>
           ))
         ) : (
           <p>No products available.</p>
