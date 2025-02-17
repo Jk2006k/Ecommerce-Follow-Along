@@ -418,17 +418,29 @@ created a page were users can open and veiw the details of an product by clickin
 
 
 
-# Milestone-17 (Cart API Creation)
+# Milestone 17 - Cart API Creation
 
 ## Overview
 
-In this milestone I have done implementing a simple cart functionality where users can add products to their cart and also remove the product from the cart. The cart stores only the product's name, price, quantity, and image.
+In this milestone I have done implementing a simple cart functionality where users can add products to their cart . The cart stores only the product's name, price, quantity, and image.
 
 ## Features
 
 - Users can add products to their cart.
-- Users can remove the Product from the cart
 - If a product already exists in the cart, its quantity will be updated.
 - The cart stores only `name`, `price`, `quantity`, and `image` for each item.
+
+##
+
+
+# Milestone 18 - Cart API
+
+## Overview
+
+This milestone I have done implementing a backend API for handling the cart page. The API includes an endpoint to retrieve products inside a user's cart.
+
+## Features
+
+- Retrieve all cart items for a specific user.
 
 ##
