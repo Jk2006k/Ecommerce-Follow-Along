@@ -26,6 +26,7 @@ const MyProduct = () => {
       // Filter products uploaded by the logged-in user
       const filteredData = response.data.filter((el) => el.userEmail === userEmail);
       setProducts(filteredData);
+      console.log("Filtered Products",filteredData);
     } catch (error) {
       console.error('Error fetching products:', error);
       alert('Failed to fetch products. Please try again.');

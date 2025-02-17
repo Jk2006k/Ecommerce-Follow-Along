@@ -27,6 +27,22 @@ const Homepage = () => {
     }
   };
 
+  const addToCart = async (product, e) => {
+    try {
+      e.preventDefault();
+      e.stopPropagation();
+      await axios.post('http://localhost:3000/cart/add', {
+        name: product.name,
+        price: product.price,
+        quantity: 1,
+        image: product.imgUrl[0]
+      });
+      alert('Product added to cart');
+    } catch (error) {
+      console.error('Error adding product to cart', error);
+    }
+  };
+
   return (
     <div className="homepage">
       <h1 className="Heading">Watch Loft</h1>  
@@ -38,12 +54,9 @@ const Homepage = () => {
           products.map((product) => (
             <Link to={`/product/${product._id}`} key={product._id}>
               <Card
-                id={product._id}
-                name={product.name}
-                image={product.imgUrl && product.imgUrl.length > 0 ? `http://localhost:3000${product.imgUrl[0]}` : '/default.jpg'}
-                price={product.price}
-                description={product.description}
+                product={product}
                 showActions={false}
+                Onadd={addToCart}
               />
             </Link>
           ))
@@ -56,3 +69,4 @@ const Homepage = () => {
 };
 
 export default Homepage;
+
