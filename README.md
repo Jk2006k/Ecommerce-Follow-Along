@@ -444,3 +444,11 @@ This milestone I have done implementing a backend API for handling the cart page
 - Retrieve all cart items for a specific user.
 
 ##
+
+
+# Milestone 19-Cart page Creation
+
+- created a cart frontend page which display's the products
+- For each product added an option to increase and decrease quantity using + and - buttons.
+- Created an Backend endpoint for increase and decrease quantity
+- Added remove button which deletes the product from cart
