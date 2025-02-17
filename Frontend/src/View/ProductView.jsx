@@ -8,12 +8,12 @@ const ProductView = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(`http://localhost:3000/forms/${id}`);
-        console.log(response.data)
         setProduct(response.data.data);
       } catch (error) {
         console.error("Error fetching product:", error);
@@ -35,11 +35,31 @@ const ProductView = () => {
     }
   };
 
-  const handleAddToCart = () => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const updatedCart = [...cart, { ...product, quantity }];
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-    alert("Product added to cart!");
+  const handleAddToCart = async () => {
+    try {
+      await axios.post('http://localhost:3000/cart/add', {
+        name: product.name,
+        price: product.price,
+        quantity,
+        image: product.imgUrl[currentImageIndex]
+      });
+      alert("Product added to cart!");
+    } catch (error) {
+      console.error("Error adding product to cart:", error);
+      alert("Failed to add product to cart.");
+    }
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      (prevIndex + 1) % product.imgUrl.length
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      (prevIndex - 1 + product.imgUrl.length) % product.imgUrl.length
+    );
   };
 
   if (!product) {
@@ -55,13 +75,13 @@ const ProductView = () => {
       <br />
       <div className="product-view">
         <h1>{product.name}</h1>
-        <div className="product-images">
-          {product.imgUrl && product.imgUrl.length > 0 ? (
-            product.imgUrl.map((url, index) => (
-              <img key={index} src={`http://localhost:3000${url}`} alt={product.name} />
-            ))
-          ) : (
-            <img src="/default.jpg" alt={product.name} />
+        <div className="image-slider">
+          {product.imgUrl && product.imgUrl.length > 1 && (
+            <button className="prev-btn" onClick={prevImage}>&#10094;</button>
+          )}
+          <img src={`http://localhost:3000${product.imgUrl[currentImageIndex]}`} alt={product.name} />
+          {product.imgUrl && product.imgUrl.length > 1 && (
+            <button className="next-btn" onClick={nextImage}>&#10095;</button>
           )}
         </div>
         <p>{product.description}</p>
@@ -72,7 +92,7 @@ const ProductView = () => {
           <span>{quantity}</span>
           <button onClick={handleIncrease}>+</button>
         </div>
-        <button onClick={handleAddToCart}>Add to Cart</button>
+        <button className='add' onClick={handleAddToCart}>Add to Cart</button>
       </div>
     </div>
   );

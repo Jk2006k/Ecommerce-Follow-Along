@@ -1,23 +1,24 @@
 import React from 'react';
 import './productCard.css';
 
-function Card({ id, name, description, image, price, showActions, onDelete, onEdit }) {
+function Card({product,showActions, onDelete, onEdit , Onadd}) {
+  console.log(product)
   return (
     <div className="card">
-      <img src={image} alt={name} className="card-image" />
+      <img src={`http://localhost:3000${product.imgUrl[0]}`} alt={product.name} className="card-image" />
       <div className="card-info">
-        <h2 className="card-name">{name}</h2>
-        <p className='card-description'>{description}</p>
-        <p className="card-price">${price}</p>
+        <h2 className="card-name">{product.name}</h2>
+        <p className='card-description'>{product.description}</p>
+        <p className="card-price">${product.price}</p>
 
         <div className="card-actions">
           {showActions ? (
             <>
-              <button className="delete-button edit" onClick={() => onEdit(id)}>Edit</button>
-              <button className="delete-button" onClick={() => onDelete(id)}>Delete</button>
+              <button className="delete-button edit" onClick={() => onEdit(product_id)}>Edit</button>
+              <button className="delete-button" onClick={() => onDelete(product._id)}>Delete</button>
             </>
           ) : (
-            <button className='addToCart'>Add To Cart</button>
+            <button onClick={(e) => Onadd(product,e)}>Add to Cart</button>
           )}
         </div>
       </div>

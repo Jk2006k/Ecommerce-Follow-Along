@@ -1,112 +1,133 @@
-
 .homepage {
-  background-color: white;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 100px; 
-}
-
-.homepage .topper {
-  background-color: #333;
-  color: white;
-  height: 70px;
-  padding: 15px 40px;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #ffffff, #f2f2f2);
+  font-family: 'Poppins', sans-serif;
+  padding: 30px 20px;
+  text-align: center;
 }
 
-.homepage .nav a {
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  color: white;  
-  margin: 0 15px;
-  transition: color 0.3s ease-in-out;
-}
-
-.homepage .nav a:hover {
-  color: #ffcc00; 
-}
-
-.homepage .Heading {
-  font-size: 32px;
-  font-weight: bold;
+.Heading {
+  font-size: 3rem;
+  font-weight: 700;
   color: #222;
   margin-bottom: 20px;
-  margin-top: 80px;
-}
-
-.hero-section {
-  text-align: center;
-  padding: 80px 20px;
-  background: url('/hero-image.jpg') center/cover no-repeat;
-  width: 100%;
-  color: white;
-  margin-bottom: 40px;
-}
-
-.hero-section h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.hero-section p {
-  font-size: 18px;
-  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1200px;
-  width: 100%;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  padding: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
-.product-card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  text-align: center;
-  transition: transform 0.2s ease-in-out;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-}
-
-.product-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-section h2 {
-      font-size: 28px;
-  }
-  
-  .hero-section p {
-      font-size: 16px;
-  }
-  
-  .product-grid {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-}
-
-a{
+.product-grid a {
   text-decoration: none;
+}
+
+.card-container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+}
+
+.card-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out;
+}
+
+.card-container:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 20px;
+  text-align: left;
+}
+
+.card-content h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.card-content p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.add-to-cart-btn {
+  display: inline-block;
+  background: #e07614;
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.add-to-cart-btn:hover {
+  background: #e66a00;
+  transform: scale(1.05);
+}
+
+.add-to-cart-btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 1024px) {
+  .Heading {
+    font-size: 2.5rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .card-image {
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Heading {
+    font-size: 2rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .card-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .card-content p {
+    font-size: 1rem;
+  }
+
+  .add-to-cart-btn {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
 }
