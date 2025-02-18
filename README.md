@@ -479,3 +479,13 @@ This milestone I have done implementing a backend API for handling the cart page
 - Add the address to the address array inside user collection.
 
 ---
+
+
+# Milestone 23-Placing order 1st page
+
+- Created an place order button inside cart page and navigate to select address page when clicked.
+- Created an select address page that will display all the available address and have an option to select one address.
+- Created backend endpoint named as Order models that will send all the addresses of the user.
+
+
+---

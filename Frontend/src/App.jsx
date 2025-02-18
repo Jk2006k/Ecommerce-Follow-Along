@@ -9,6 +9,8 @@ import Cart from './Mycart/cart';
 import ProductView from './View/ProductView';
 import Profile from './View/Profile';
 import AddAddress from './View/AddAddress';
+import SelectAddress from './Mycart/selectAddress'; 
+
 
 const App =()=>{
   return(
@@ -24,6 +26,8 @@ const App =()=>{
         <Route path="/product/:id" element={<ProductView/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/add-address" element={<AddAddress />} />
+        <Route path="/select-address" element={<SelectAddress />} /> 
+
 
       </Routes>
     </BrowserRouter>

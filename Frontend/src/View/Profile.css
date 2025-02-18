@@ -8,11 +8,8 @@
     max-width: 500px;
     width: 100%;
     text-align: center;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 80px auto;
+    min-height: 300px; 
   }
   
   .profile-heading {
