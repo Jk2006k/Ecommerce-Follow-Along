@@ -516,3 +516,20 @@ This milestone I have done implementing a backend API for handling the cart page
 
 
 ---
+
+
+# Milestone 27 - My orders Page 
+
+- Created an my-orders page
+- send an get request to my-orders endpoint that is created in previous milestone.
+- send user mail in to endpoint to get all the user orders
+- Display all the user orders
+- Added my-orders page in navbar for better navigation.
+
+
+---
+
+
+
+
+

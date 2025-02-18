@@ -45,6 +45,7 @@ const OrderConfirmation = () => {
   };
 
   const handlePlaceOrder = async () => {
+    console.log("Cart",cartItems)
     try {
       await axios.post('http://localhost:3000/api/orders', {
         userEmail: localStorage.getItem('userEmail'),
@@ -53,7 +54,7 @@ const OrderConfirmation = () => {
         address: selectedAddress
       });
       alert('Order placed successfully');
-      navigate('/order-success');
+      navigate('/my-orders');
     } catch (error) {
       console.error('Error placing order', error);
     }

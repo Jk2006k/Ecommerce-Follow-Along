@@ -20,6 +20,7 @@
                     <Link to={'/form'}> <p>Add Product</p> </Link>
                     <Link to={`/myproducts`}> <p>My Products</p> </Link>
                     <Link to={'/cart'}> <p>Cart</p> </Link>
+                    <Link to={'/my-orders'}>My Order</Link>
 
                 </Links>
             </NavbarContainer>

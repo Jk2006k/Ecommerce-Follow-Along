@@ -11,6 +11,7 @@ import Profile from './View/Profile';
 import AddAddress from './View/AddAddress';
 import SelectAddress from './Mycart/selectAddress'; 
 import OrderConfirmation from './Order/OrderConfirmation';
+import MyOrders from './Order/MyOrders'; 
 
 
 const App =()=>{
@@ -29,6 +30,8 @@ const App =()=>{
         <Route path="/add-address" element={<AddAddress />} />
         <Route path="/select-address" element={<SelectAddress />} /> 
         <Route path="/order-confirmation" element={<OrderConfirmation />} /> 
+        <Route path="/my-orders" element={<MyOrders />} /> 
+
 
 
       </Routes>
@@ -37,3 +40,4 @@ const App =()=>{
 }
 
 export default App;
+
