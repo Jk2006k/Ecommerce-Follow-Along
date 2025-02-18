@@ -6,7 +6,9 @@ import Homepage from './Homepage/Homepage';
 import ProductForm from './Form/Form';
 import MyProduct from './myProduct/myProduct';
 import Cart from './Mycart/cart';
-import ProductView from './View/ProductView'; 
+import ProductView from './View/ProductView';
+import Profile from './View/Profile';
+import AddAddress from './View/AddAddress';
 
 const App =()=>{
   return(
@@ -20,6 +22,9 @@ const App =()=>{
         <Route path='/form/:id' element={<ProductForm/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path="/product/:id" element={<ProductView/>}/>
+        <Route path="/profile" element={<Profile/>}/>
+        <Route path="/add-address" element={<AddAddress />} />
+
       </Routes>
     </BrowserRouter>
   )

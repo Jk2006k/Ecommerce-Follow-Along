@@ -38,6 +38,7 @@ const ProductView = () => {
   const handleAddToCart = async () => {
     try {
       await axios.post('http://localhost:3000/cart/add', {
+        product: product._id, 
         name: product.name,
         price: product.price,
         quantity,
