@@ -22,6 +22,22 @@ const MyOrders = () => {
     }
   };
 
+  const handleCancelOrder = async (orderId) => {
+    try {
+      const response = await axios.post('http://localhost:3000/api/order/cancel', {
+        orderId
+      });
+      console.log('Order cancelled:', response.data.order);
+      setOrders((prevOrders) =>
+        prevOrders.map((order) =>
+          order._id === orderId ? { ...order, status: 'Cancelled' } : order
+        )
+      );
+    } catch (error) {
+      console.error('Error cancelling order:', error);
+    }
+  };
+
   return (
     <div>
       <div className="topper">
@@ -46,6 +62,9 @@ const MyOrders = () => {
                   </li>
                 ))}
               </ul>
+              {order.status !== 'Cancelled' && (
+                <button onClick={() => handleCancelOrder(order._id)} className="cancel-button">Cancel Order</button>
+              )}
             </div>
           ))
         ) : (
