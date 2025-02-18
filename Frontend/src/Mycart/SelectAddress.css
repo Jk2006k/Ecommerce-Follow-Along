@@ -1,0 +1,42 @@
+.select-address-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .select-address-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    margin-top: 130px;
+  }
+  
+  .address-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .select-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .select-button:hover {
+    background: #0056b3;
+  }

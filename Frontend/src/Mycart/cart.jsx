@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './cart.css';
 import Navbar from '../Navbar';
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchCartItems();
@@ -62,6 +64,10 @@ const CartPage = () => {
     }
   };
 
+  const handlePlaceOrder = () => {
+    navigate('/select-address');
+  };
+
   return (
     <div>
       <div className="topper">
@@ -72,7 +78,7 @@ const CartPage = () => {
       <div>
         <h1 className='cartt'>My Cart</h1>
         <h2 className='total'>Total Price: ${totalPrice.toFixed(2)}</h2>
-        <button className='order'>Place Order</button>
+        <button className='order' onClick={handlePlaceOrder}>Place Order</button>
         <ul>
           {cartItems.length > 0 ? (
             cartItems.map((item) => (
