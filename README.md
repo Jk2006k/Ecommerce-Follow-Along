@@ -509,3 +509,10 @@ This milestone I have done implementing a backend API for handling the cart page
 
 ---
 
+# Milestone 26-Updating OrderController and Routes
+
+- In Order Controller i Created a new function getUserOrders to handle fetching all orders for a user. This function retrieves the user ID using the email, finds all orders for that user, and sends the orders in the response.
+- In Routes i have Added a new route /user/orders to handle fetching user orders.
+
+
+---
