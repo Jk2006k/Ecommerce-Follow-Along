@@ -454,10 +454,19 @@ This milestone I have done implementing a backend API for handling the cart page
 - Added remove button which deletes the product from cart
 
 
+---
+
 # Milestone 20-Profile Page
 
 - Created a profile page which display's your image,name,email and a add address button.
-- created backend endpoint for adding the address and also removing it with the hep of a small button.
+- created backend endpoint for adding the address and also removing .
 - User can add multiple address which will be visible in profile page. 
 
+---
 
+# Milestone 21-Profile Page Frontend
+
+- created an address form frontend page
+- Created an state that will store input address
+- when we click on add address in profile it will navigate to this form page.
+- Remove button by which we can remove the unwanted address.
