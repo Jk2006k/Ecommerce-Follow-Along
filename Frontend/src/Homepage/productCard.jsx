@@ -14,7 +14,7 @@ function Card({product,showActions, onDelete, onEdit , Onadd}) {
         <div className="card-actions">
           {showActions ? (
             <>
-              <button className="delete-button edit" onClick={() => onEdit(product_id)}>Edit</button>
+              <button className="delete-button edit" onClick={() => onEdit(product._id)}>Edit</button>
               <button className="delete-button" onClick={() => onDelete(product._id)}>Delete</button>
             </>
           ) : (

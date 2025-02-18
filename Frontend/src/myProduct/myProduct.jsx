@@ -43,6 +43,10 @@ const MyProduct = () => {
 
       if (response.status === 200) {
         setProducts((prevProducts) => prevProducts.filter((product) => product._id !== id));
+        await axios.delete(`http://localhost:3000/cart/removeProduct/${id}`);
+        alert('Product deleted and removed from cart');
+
+
       } else {
         console.error('Failed to delete product:', response);
         alert('Error deleting product.');
@@ -69,11 +73,7 @@ const MyProduct = () => {
             products.map((product) => (
               <Card
                 key={product._id}
-                id={product._id}
-                name={product.name}
-                image={product.imgUrl?.length > 0 ? `http://localhost:3000${product.imgUrl[0]}` : '/default.jpg'}
-                price={product.price}
-                description={product.description}
+                product={product}
                 showActions={true}
                 onDelete={handleDelete}
                 onEdit={handleEdit}

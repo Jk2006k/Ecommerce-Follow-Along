@@ -9,6 +9,7 @@ const CartPage = () => {
 
   useEffect(() => {
     fetchCartItems();
+    console.log('Cart Items:', cartItems);  
   }, []);
 
   const fetchCartItems = async () => {
@@ -97,3 +98,4 @@ const CartPage = () => {
 };
 
 export default CartPage;
+

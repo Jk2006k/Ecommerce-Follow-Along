@@ -452,3 +452,12 @@ This milestone I have done implementing a backend API for handling the cart page
 - For each product added an option to increase and decrease quantity using + and - buttons.
 - Created an Backend endpoint for increase and decrease quantity
 - Added remove button which deletes the product from cart
+
+
+# Milestone 20-Profile Page
+
+- Created a profile page which display's your image,name,email and a add address button.
+- created backend endpoint for adding the address and also removing it with the hep of a small button.
+- User can add multiple address which will be visible in profile page. 
+
+

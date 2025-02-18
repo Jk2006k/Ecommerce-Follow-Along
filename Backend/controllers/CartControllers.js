@@ -2,7 +2,7 @@ const Cart = require('../models/CartModels');
 
 const addToCart = async (req, res) => {
   try {
-    const { name, price, quantity, image } = req.body;
+    const { product,name, price, quantity, image } = req.body;
 
     if (!name || !price || !image) {
       return res.status(400).json({ message: "Missing required fields" });
@@ -16,6 +16,7 @@ const addToCart = async (req, res) => {
       res.status(200).json({ message: "Product quantity updated in cart", cart: cartItem });
     } else {
       const newCartItem = new Cart({
+        product,
         name,
         price,
         quantity,
@@ -86,5 +87,16 @@ const increaseQuantity = async (req, res) => {
     }
   };
 
+  
+const removeProductFromCart = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await Cart.deleteOne({ product:id });
+    res.status(200).json({ message: "Product removed from cart" });
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
+};
 
-module.exports = { addToCart, getCartItems, removeFromCart, increaseQuantity, decreaseQuantity };
+
+module.exports = { addToCart, getCartItems, removeFromCart, increaseQuantity, decreaseQuantity, removeProductFromCart };

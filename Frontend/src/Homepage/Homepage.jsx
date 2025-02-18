@@ -32,6 +32,7 @@ const Homepage = () => {
       e.preventDefault();
       e.stopPropagation();
       await axios.post('http://localhost:3000/cart/add', {
+        product: product._id,
         name: product.name,
         price: product.price,
         quantity: 1,
