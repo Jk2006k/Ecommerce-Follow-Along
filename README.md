@@ -470,3 +470,12 @@ This milestone I have done implementing a backend API for handling the cart page
 - Created an state that will store input address
 - when we click on add address in profile it will navigate to this form page.
 - Remove button by which we can remove the unwanted address.
+
+---
+
+# Milestone 22- Endpoint Creation
+
+- Created an endpoint that will receive the address from address form in frontend
+- Add the address to the address array inside user collection.
+
+---
