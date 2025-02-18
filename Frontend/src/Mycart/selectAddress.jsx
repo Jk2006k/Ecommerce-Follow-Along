@@ -16,7 +16,6 @@ const SelectAddress = () => {
     try {
       const response = await axios.post('http://localhost:3000/api/profile/addresses', {
         userEmail: localStorage.getItem('userEmail')
-    
       });
       setAddresses(response.data.addresses);
     } catch (error) {
@@ -25,8 +24,7 @@ const SelectAddress = () => {
   };
 
   const handleSelectAddress = (addressId) => {
-    alert(`Address ${addressId} selected`);
-    navigate('/order-summary');
+    navigate('/order-confirmation', { state: { addressId } });
   };
 
   return (

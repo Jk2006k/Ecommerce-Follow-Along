@@ -489,3 +489,14 @@ This milestone I have done implementing a backend API for handling the cart page
 
 
 ---
+
+
+# Milestone 24-Order Confirmation page
+
+## Created a Order Confirmation page 
+- First we will display all the products we are ordering.
+- Next we will display the address user selected to deliver.
+- Next We will display the total value of the cart.
+- We will have an place order button at the bottom.
+
+---

@@ -10,6 +10,7 @@ import ProductView from './View/ProductView';
 import Profile from './View/Profile';
 import AddAddress from './View/AddAddress';
 import SelectAddress from './Mycart/selectAddress'; 
+import OrderConfirmation from './Order/OrderConfirmation';
 
 
 const App =()=>{
@@ -27,6 +28,7 @@ const App =()=>{
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/add-address" element={<AddAddress />} />
         <Route path="/select-address" element={<SelectAddress />} /> 
+        <Route path="/order-confirmation" element={<OrderConfirmation />} /> 
 
 
       </Routes>
