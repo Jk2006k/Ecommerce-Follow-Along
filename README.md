@@ -529,6 +529,15 @@ This milestone I have done implementing a backend API for handling the cart page
 
 ---
 
+# Milestone 28 - Cancel button 
+
+- In my-orders page for every order added cancel order button.
+- If the order is already canceled this button will not be displayed.
+- Created an endpoint that will receive the order-id.
+- using id marked the status as canceled and saved the changes.
+
+---
+
 
 
 

@@ -29,3 +29,18 @@
   .order-item p {
     margin: 5px 0;
   }
+
+  .cancel-button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .cancel-button:hover {
+    background: #c82333;
+  }
