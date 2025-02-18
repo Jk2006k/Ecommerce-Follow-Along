@@ -500,3 +500,12 @@ This milestone I have done implementing a backend API for handling the cart page
 - We will have an place order button at the bottom.
 
 ---
+
+# Milestone 25-Endpoint for Order confirmation
+
+- in Controller Created a new controller function createOrder to handle order creation. This function retrieves the user ID using the email, creates an order for each product with the same address, and saves the orders to the database.
+- Added a new route /orders to handle order creation.
+
+
+---
+
