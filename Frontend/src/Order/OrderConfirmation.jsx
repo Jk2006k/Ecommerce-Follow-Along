@@ -8,6 +8,7 @@ const OrderConfirmation = () => {
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [selectedAddress, setSelectedAddress] = useState(null);
+  const [paymentMethod, setPaymentMethod] = useState('COD');
   const location = useLocation();
   const navigate = useNavigate();
   const { addressId } = location.state;
@@ -15,6 +16,7 @@ const OrderConfirmation = () => {
   useEffect(() => {
     fetchCartItems();
     fetchSelectedAddress();
+    loadRazorpayScript();
   }, []);
 
   const fetchCartItems = async () => {
@@ -45,18 +47,63 @@ const OrderConfirmation = () => {
   };
 
   const handlePlaceOrder = async () => {
-    console.log("Cart",cartItems)
+    console.log("Cart", cartItems);
     try {
       await axios.post('http://localhost:3000/api/orders', {
         userEmail: localStorage.getItem('userEmail'),
         items: cartItems,
         totalPrice,
-        address: selectedAddress
+        address: selectedAddress,
+        paymentMethod
       });
+
       alert('Order placed successfully');
-      navigate('/my-orders');
+      navigate('/my-orders', { state: { orderData: { total: totalPrice } } });
     } catch (error) {
       console.error('Error placing order', error);
+    }
+  };
+
+  const loadRazorpayScript = () => {
+    const script = document.createElement('script');
+    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+    script.async = true;
+    document.body.appendChild(script);
+  };
+
+  const handleRazorpayPayment = async () => {
+    try {
+      const response = await axios.post('http://localhost:3000/api/checkout', {
+        total: totalPrice,
+      });
+
+      const { id, amount, currency } = response.data.order;
+
+      const options = {
+        key: import.meta.env.VITE_RAZORPAY_ID_KEY,
+        amount,
+        currency,
+        name: 'Watch Loft',
+        description: 'Order Payment',
+        order_id: id,
+        handler: async (response) => {
+          alert('Payment successful');
+          handlePlaceOrder();
+        },
+        prefill: {
+          name: 'Your Name',
+          email: 'your.email@example.com',
+          contact: '9999999999'
+        },
+        theme: {
+          color: '#3399cc'
+        }
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+    } catch (error) {
+      console.error('Error creating Razorpay order', error);
     }
   };
 
@@ -92,11 +139,46 @@ const OrderConfirmation = () => {
         <div className="order-total">
           <h2>Total Price: ${totalPrice.toFixed(2)}</h2>
         </div>
-        <button className='place-order-button' onClick={handlePlaceOrder}>Place Order</button>
+        <div className="payment-method">
+          <h2>Payment Method</h2>
+          <div className="payment-options">
+            <label className="payment-option">
+              <input
+              className='radio'
+                type="radio"
+                value="COD"
+                checked={paymentMethod === 'COD'}
+                onChange={() => setPaymentMethod('COD')}
+              />
+              <span className='method2'>Cash on Delivery (COD)</span>
+            </label>
+            <label className="payment-option">
+              <input
+              className='but'
+                type="radio"
+                value="Online"
+                checked={paymentMethod === 'Online'}
+                onChange={() => setPaymentMethod('Online')}
+              />
+              <span className='method'>Online Payment</span>
+            </label>
+          </div>
+        </div>
+        <div className="button-container">
+          {paymentMethod === 'Online' && (
+            <button onClick={handleRazorpayPayment} className="razorpay-button">
+              Pay with Razorpay
+            </button>
+          )}
+          {paymentMethod === 'COD' && (
+            <button className="place-order-button" onClick={handlePlaceOrder}>
+              Place Order
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
 };
 
 export default OrderConfirmation;
-

@@ -62,7 +62,6 @@ const Profile = () => {
             userData.addresses.map((address) => (
               <div key={address._id} className="address-item">
                 <p>{address.addressLine1}, {address.addressLine2}, {address.city}, {address.state}, {address.pincode} {<button onClick={() => handleRemoveAddress(address._id)} className="remove-button">X</button>}</p>
-                {/* <button onClick={() => handleRemoveAddress(address._id)} className="remove-button">X</button> */}
               </div>
             ))
           ) : (

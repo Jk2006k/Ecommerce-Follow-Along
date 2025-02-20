@@ -43,7 +43,7 @@ const SelectAddress = () => {
             </div>
           ))
         ) : (
-          <p>No addresses found</p>
+          <p>No addresses found Add address in profile page</p>
         )}
       </div>
     </div>
@@ -51,3 +51,4 @@ const SelectAddress = () => {
 };
 
 export default SelectAddress;
+
