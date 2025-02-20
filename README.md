@@ -539,6 +539,17 @@ This milestone I have done implementing a backend API for handling the cart page
 ---
 
 
+# Milestone 29 - Razorpay
+
+added payment methods so that the user can chose the payment method by clicking on the radio button their will be two options cash on delivery and online if the user selects cash on delivery the product is added to my order directly but if the user selects the online method after the test mode payment is done the product will get added to my orders page .
+
+
+---
+
+
+
+
+
 
 
 
