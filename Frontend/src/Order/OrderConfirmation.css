@@ -1,50 +1,98 @@
 .order-confirmation-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    font-family: 'Poppins', sans-serif;
-    
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    text-align: center;
-    margin: 80px auto;
-    min-height: 300px; 
-  }
-  
-  .order-confirmation-heading {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .order-items, .order-address, .order-total {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    margin-bottom: 20px;
-  }
-  
-  .order-item-image {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-right: 20px;
-  }
-  
-  .place-order-button {
-    background: #3d28a79a;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .place-order-button:hover {
-    background: #212d88eb;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.order-confirmation-heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.order-items, .order-address, .order-total, .payment-method {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.order-item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+
+
+
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start; 
+  width: 100%;
+}
+
+.payment-option {
+  display: flex;
+  align-items: left;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 400px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.payment-option:hover {
+  background-color: #f1f1f1;
+}
+
+.payment-option input {
+  margin-right: 15px; 
+  transform: scale(1.2);
+  cursor: pointer;
+  align-self: flex-start; 
+}
+
+.payment-option span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  white-space: nowrap; 
+  flex-grow: 1; 
+  text-align: left; 
+}
+
+.button-container{
+  display: flex;
+  align-items: flex-start;
+
+}
+
+.radio{
+  position: relative;
+  right: 80px;
+}
+
+.but{
+  position: relative;
+  right: 110px;
+}
+
+.method{
+  position: relative;
+  right: 200px;
+}
+
+.method2{
+  position: relative;
+  right: 142px;
+}

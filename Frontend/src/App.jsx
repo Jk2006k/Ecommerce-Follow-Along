@@ -12,7 +12,7 @@ import AddAddress from './View/AddAddress';
 import SelectAddress from './Mycart/selectAddress'; 
 import OrderConfirmation from './Order/OrderConfirmation';
 import MyOrders from './Order/MyOrders'; 
-
+import Payment from './Order/Payment';
 
 const App =()=>{
   return(
@@ -31,8 +31,6 @@ const App =()=>{
         <Route path="/select-address" element={<SelectAddress />} /> 
         <Route path="/order-confirmation" element={<OrderConfirmation />} /> 
         <Route path="/my-orders" element={<MyOrders />} /> 
-
-
 
       </Routes>
     </BrowserRouter>
