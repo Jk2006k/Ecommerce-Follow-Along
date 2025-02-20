@@ -38,6 +38,12 @@ const CartPage = () => {
 
   const updateCartItem = async (id, action) => {
     try {
+      const item = cartItems.find(item => item._id === id);
+      if (action === 'increase' && item.quantity >= item.stock) {
+        alert('Cannot increase quantity beyond available stock');
+        return;
+      }
+
       await axios.patch(`http://localhost:3000/cart/${action}/${id}`); 
       const updatedItems = cartItems.map(item => {
         if (item._id === id) {
@@ -89,7 +95,7 @@ const CartPage = () => {
                 <p>Quantity:  
                   <button className='minus' onClick={() => updateCartItem(item._id, 'decrease')} disabled={item.quantity <= 1}>-</button>
                   {item.quantity}
-                  <button className='plus' onClick={() => updateCartItem(item._id, 'increase')}>+</button>
+                  <button className='plus' onClick={() => updateCartItem(item._id, 'increase')} disabled={item.quantity >= item.stock}>+</button>
                 </p>
                 <button className='place' onClick={() => removeCartItem(item._id)}>Remove</button>
               </li>
