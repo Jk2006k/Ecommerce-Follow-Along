@@ -12,6 +12,7 @@ const Profile = () => {
     fetchUserProfile();
   }, []);
 
+
   const fetchUserProfile = async () => {
     try {
       const response = await axios.post('http://localhost:3000/api/profile', {
@@ -23,11 +24,9 @@ const Profile = () => {
       console.error('Error fetching user profile:', error);
     }
   };
-
   const handleAddAddress = () => {
     navigate('/add-address');
   };
-
   const handleRemoveAddress = async (addressId) => {
     try {
       const response = await axios.post('http://localhost:3000/api/profile/remove', {
@@ -40,11 +39,9 @@ const Profile = () => {
       console.error('Error removing address:', error);
     }
   };
-
   if (!userData) {
-    return <p>Loading...</p>;
+    return <p>Please Signup/login</p>;
   }
-
   return (
     <div>
       <div className="topper">
