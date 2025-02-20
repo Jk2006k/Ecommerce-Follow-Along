@@ -547,9 +547,13 @@ added payment methods so that the user can chose the payment method by clicking 
 ---
 
 
+# Milestone 30-Razorpay implementation
+
+- Implemented online payment using Razorpay API using the client key That i have created earlier.
+- it display's online payment methods like credit or debit card etc...
 
 
-
+---
 
 
 
