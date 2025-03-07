@@ -13,6 +13,7 @@ const SignUp = () => {
     imagePreview: null,
   });
 
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -37,8 +38,8 @@ const SignUp = () => {
     formDataToSend.append('file', formData.image);
 
     try {
-      const res = await axios.post('http://localhost:3000/api/signup', formDataToSend, {
-        headers: { 'Content-Type': 'multipart/form-data' }
+        const res = await axios.post('http://localhost:3000/api/signup', formDataToSend, {
+        headers: { 'Content-Type': 'multipart/form-data' }  
       });
 
       console.log('User created successfully:', res.data);
@@ -84,8 +85,6 @@ const SignUp = () => {
         )}
         <button type="submit" className="signup-button">Sign Up</button>
       </form>
-
-      {/* Login Button */}
     </div>
   );
 };
