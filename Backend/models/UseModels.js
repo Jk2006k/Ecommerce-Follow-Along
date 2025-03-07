@@ -13,29 +13,29 @@ const UserSchema= new mongoose.Schema({
     name:{
         type:String,
         required:true,
-        // match:[/^[a-zA-Z0-9 ]+$/,"User Name Invalid"]
+        match:[/^[a-zA-Z0-9 ]+$/,"User Name Invalid"]
     },
 
     email:{
         type:String,
         required:true,
-        // match:[/^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$/,"Email Is Invaid"]
+        match:[/^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$/,"Email Is Invaid"]
     },
 
     password:{
         type:String,
         required:true,
-        // minlength:[8,'The minimun digit should be 8'],
-        // validate:{
-        //     validator:ValidatePasword,
-        //     message:"Enter a strong Password"
+        minlength:[8,'The minimun digit should be 8'],
+        validate:{
+            validator:ValidatePasword,
+            message:"Enter a strong Password"
             
-        // }
+        }
     },
     
     img:{
         type:String,
-        // required:true
+        required:true
     },
     addresses: [AddressSchema] 
 

@@ -14,6 +14,7 @@ const ProductForm = () => {
     stock: '',
     images: [],
   });
+  
   const [previewImages, setPreviewImages] = useState([]);
 
   useEffect(() => {

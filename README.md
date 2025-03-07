@@ -555,5 +555,10 @@ added payment methods so that the user can chose the payment method by clicking 
 
 ---
 
+### Milestone 31 - Redux Setup  
 
+In this milestone, I set up Redux to manage the user's email globally in my React app. I installed `react-redux`, created a `store` folder with `store.js` and `userActions.js`, and configured a Redux store with `userReducer`. I added a `setEmail` function to update the email state and wrapped the `App` component inside the `Provider` in `index.js` to enable global state access.
+
+
+---
 

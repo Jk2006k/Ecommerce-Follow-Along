@@ -8,7 +8,6 @@ const { upload } = require('../config/multer');
 
 
 
-
 router.post('/signup', upload.single('file'), signUp);
 router.post('/login', login);
 router.post('/profile', getUserProfile);
