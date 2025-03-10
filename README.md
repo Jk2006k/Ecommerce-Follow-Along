@@ -572,3 +572,14 @@ This milestone we will implement a login system where the user's email is stored
 
 --- 
 
+### Milestone 33
+
+In this milestone, we implemented JWT authentication for the login system. The user's email and ID are used to create a JWT token, which is then stored as a cookie in the browser with an expiration time.
+
+- Installed `jsonwebtoken` package.
+- Updated the login function to create a JWT token with the user's email and ID.
+- Set the token to expire and added it as a cookie in the response.
+- Updated the login page to store the JWT token in local storage.
+
+
+---
