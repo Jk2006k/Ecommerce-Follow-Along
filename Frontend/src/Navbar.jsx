@@ -2,19 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { setUserEmail } from './store/userActions';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const email = useSelector((state) => state.user.email);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     // Check if the user is authenticated
     const token = localStorage.getItem('authToken');
-    if (token) {
-      setIsAuthenticated(true);
+    const storedEmail = localStorage.getItem('email');
+    if (token && storedEmail) {
+      dispatch(setUserEmail(storedEmail));
     }
-  }, []);
+  }, [dispatch]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -22,7 +26,8 @@ const Navbar = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('authToken');
-    setIsAuthenticated(false);
+    localStorage.removeItem('email');
+    dispatch(setUserEmail(''));
     navigate('/');
   };
 
@@ -30,8 +35,8 @@ const Navbar = () => {
     <NavbarContainer>
       <Links className={isOpen ? 'open' : ''}>
         <Link to={'/'}> <p>Home</p> </Link>
-        {!isAuthenticated && <Link to={'/signup'}>Signup</Link>}
-        {isAuthenticated && (
+        {!email && <Link to={'/signup'}>Signup</Link>}
+        {email && (
           <>
             <Link to={'/profile'}><i className="fa-regular fa-user"></i></Link>
             <Link to={'/form'}> <p>Add Product</p> </Link>

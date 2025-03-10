@@ -3,20 +3,23 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Navbar';
 import './Profile.css';
+import { useSelector } from 'react-redux';
 
 const Profile = () => {
   const [userData, setUserData] = useState(null);
   const navigate = useNavigate();
+  const email = useSelector((state) => state.user.email);
 
   useEffect(() => {
-    fetchUserProfile();
-  }, []);
-
+    if (email) {
+      fetchUserProfile();
+    }
+  }, [email]);
 
   const fetchUserProfile = async () => {
     try {
       const response = await axios.post('http://localhost:3000/api/profile', {
-        userEmail: localStorage.getItem('userEmail')
+        userEmail: email
       });
       setUserData(response.data.user);
       console.log(response.data.user);
@@ -24,13 +27,15 @@ const Profile = () => {
       console.error('Error fetching user profile:', error);
     }
   };
+
   const handleAddAddress = () => {
     navigate('/add-address');
   };
+
   const handleRemoveAddress = async (addressId) => {
     try {
       const response = await axios.post('http://localhost:3000/api/profile/remove', {
-        userEmail: localStorage.getItem('userEmail'),
+        userEmail: email,
         addressId
       });
       setUserData(response.data.user);
@@ -39,9 +44,11 @@ const Profile = () => {
       console.error('Error removing address:', error);
     }
   };
+
   if (!userData) {
     return <p>Please Signup/login</p>;
   }
+
   return (
     <div>
       <div className="topper">
@@ -50,6 +57,7 @@ const Profile = () => {
       </div>
       <div className="profile-container">
         <h1 className='profile-heading'>Profile</h1>
+        <p>Email: {email}</p>
         <div className="profile-section">
           <img src={`http://localhost:3000/uploads/${userData.img}`} alt="Profile" className="profile-photo" />
           <h2>{userData.name}</h2>
