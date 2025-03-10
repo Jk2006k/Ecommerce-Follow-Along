@@ -562,3 +562,13 @@ In this milestone, I set up Redux to manage the user's email globally in my Reac
 
 ---
 
+### Milestone 32 
+
+
+This milestone we will implement a login system where the user's email is stored in a global state using the dispatch method. The stored email is then accessed in all remaining pages using useSelector.the email is also visible in profile page.
+
+- I have installed react-redux for this implementation 
+- created a store.js and userAction.js files 
+
+--- 
+

@@ -2,58 +2,41 @@ import React, { useState } from 'react';
 import './login.css';
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useNavigate } from 'react-router-dom';  
+import { useDispatch } from 'react-redux';
+import { setUserEmail } from '../store/userActions';
+import axios from 'axios';
 
 const Login = () => {
   const navigate=useNavigate();
-  const [formData, setFormData] = useState({ 
-    email: '',
-    password: '',
-  });
+  const [email, setEmailInput] = useState('');
+  const [password, setPasswordInput] = useState('');
   const [isPasswordVisible, setIsPasswordVisible] = useState(false); 
   const [errorMessage, setErrorMessage] = useState('');
+  const dispatch = useDispatch();
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible((prevState) => !prevState); 
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-
     try {
-      const response = await fetch('http://localhost:3000/api/login', { 
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        localStorage.setItem('userEmail', formData.email);
-        localStorage.setItem('authToken', data.token);
-        console.log("Successfully Logged In");
-        navigate('/'); 
-      } else {
-        setErrorMessage(data.message || "Invalid credentials");
+      const response = await axios.post('http://localhost:3000/api/login', { email, password });
+      if (response.status === 200) {
+        localStorage.setItem('authToken', response.data.token);
+        localStorage.setItem('email', email);
+        dispatch(setUserEmail(email));
+        navigate('/profile');
       }
     } catch (error) {
-      alert("Signup before Login In",error)
+      console.error('Error logging in:', error);
+      setErrorMessage('Invalid credentials');
     }
   };
 
   return (
     <div className="login-container">
-      <form onSubmit={handleSubmit} className="login-form">
+      <form onSubmit={handleLogin} className="login-form">
         <h2>Login</h2>
 
         {errorMessage && <p className="error-message">{errorMessage}</p>}
@@ -62,9 +45,8 @@ const Login = () => {
           <label>Email</label>
           <input
             type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
+            value={email}
+            onChange={(e) => setEmailInput(e.target.value)}
             required
             placeholder='Enter email'
           />
@@ -75,9 +57,8 @@ const Login = () => {
           <div className='passcon'>
             <input
                 type={isPasswordVisible ? 'text' : 'password'}
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
+                value={password}
+                onChange={(e) => setPasswordInput(e.target.value)}
                 required
                 placeholder='Enter strong password'
             />
