@@ -555,14 +555,14 @@ added payment methods so that the user can chose the payment method by clicking 
 
 ---
 
-### Milestone 31 - Redux Setup  
+# Milestone 31 - Redux Setup  
 
 In this milestone, I set up Redux to manage the user's email globally in my React app. I installed `react-redux`, created a `store` folder with `store.js` and `userActions.js`, and configured a Redux store with `userReducer`. I added a `setEmail` function to update the email state and wrapped the `App` component inside the `Provider` in `index.js` to enable global state access.
 
 
 ---
 
-### Milestone 32 
+# Milestone 32 
 
 
 This milestone we will implement a login system where the user's email is stored in a global state using the dispatch method. The stored email is then accessed in all remaining pages using useSelector.the email is also visible in profile page.
@@ -572,7 +572,7 @@ This milestone we will implement a login system where the user's email is stored
 
 --- 
 
-### Milestone 33
+# Milestone 33
 
 In this milestone, we implemented JWT authentication for the login system. The user's email and ID are used to create a JWT token, which is then stored as a cookie in the browser with an expiration time.
 
@@ -583,3 +583,12 @@ In this milestone, we implemented JWT authentication for the login system. The u
 
 
 ---
+
+# Milestone 34 - User Authentication with JWT
+
+This milestone focuses on implementing user authentication using JSON Web Tokens (JWT). The goal is to ensure that users cannot access restricted pages without logging in.
+
+- Users must be logged in to access protected pages.
+- Unauthorized users will be redirected to the login page.
+- Secure authentication using JWT ensures a safe user experience.
+

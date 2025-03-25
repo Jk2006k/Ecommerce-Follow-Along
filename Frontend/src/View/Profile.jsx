@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Navbar';
 import './Profile.css';
 import { useSelector } from 'react-redux';
+import axiosInstance from '../axiosConfig';
 
 const Profile = () => {
   const [userData, setUserData] = useState(null);
@@ -18,7 +18,7 @@ const Profile = () => {
 
   const fetchUserProfile = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/api/profile', {
+      const response = await axiosInstance.post('/profile', {
         userEmail: email
       });
       setUserData(response.data.user);
@@ -34,7 +34,7 @@ const Profile = () => {
 
   const handleRemoveAddress = async (addressId) => {
     try {
-      const response = await axios.post('http://localhost:3000/api/profile/remove', {
+      const response = await axiosInstance.post('/profile/remove', {
         userEmail: email,
         addressId
       });

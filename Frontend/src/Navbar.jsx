@@ -12,7 +12,6 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // Check if the user is authenticated
     const token = localStorage.getItem('authToken');
     const storedEmail = localStorage.getItem('email');
     if (token && storedEmail) {
