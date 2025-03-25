@@ -15,7 +15,7 @@ const AddAddress = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/api/profile/address', {
+      const response = await axios.post('https://ecommerce-follow-along-oeux.onrender.com/api/profile/address', {
         userEmail: localStorage.getItem('userEmail'),
         address: {
           addressLine1,

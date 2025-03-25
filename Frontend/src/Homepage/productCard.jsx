@@ -5,7 +5,7 @@ function Card({product,showActions, onDelete, onEdit , Onadd}) {
   console.log(product)
   return (
     <div className="card">
-      <img src={`http://localhost:3000${product.imgUrl[0]}`} alt={product.name} className="card-image" />
+      <img src={`https://ecommerce-follow-along-oeux.onrender.com${product.imgUrl[0]}`} alt={product.name} className="card-image" />
       <div className="card-info">
         <h2 className="card-name">{product.name}</h2>
         <p className='card-description'>{product.description}</p>

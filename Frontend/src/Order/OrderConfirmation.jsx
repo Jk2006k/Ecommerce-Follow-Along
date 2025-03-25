@@ -21,7 +21,7 @@ const OrderConfirmation = () => {
 
   const fetchCartItems = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/cart/items');
+      const response = await axios.get('https://ecommerce-follow-along-oeux.onrender.com/cart/items');
       setCartItems(response.data);
       calculateTotalPrice(response.data);
     } catch (error) {
@@ -31,7 +31,7 @@ const OrderConfirmation = () => {
 
   const fetchSelectedAddress = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/api/profile/addresses', {
+      const response = await axios.post('https://ecommerce-follow-along-oeux.onrender.com/api/profile/addresses', {
         userEmail: localStorage.getItem('userEmail')
       });
       const address = response.data.addresses.find(addr => addr._id === addressId);
@@ -49,7 +49,7 @@ const OrderConfirmation = () => {
   const handlePlaceOrder = async () => {
     console.log("Cart", cartItems);
     try {
-      await axios.post('http://localhost:3000/api/orders', {
+      await axios.post('https://ecommerce-follow-along-oeux.onrender.com/api/orders', {
         userEmail: localStorage.getItem('userEmail'),
         items: cartItems,
         totalPrice,
@@ -73,7 +73,7 @@ const OrderConfirmation = () => {
 
   const handleRazorpayPayment = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/api/checkout', {
+      const response = await axios.post('https://ecommerce-follow-along-oeux.onrender.com/api/checkout', {
         total: totalPrice,
       });
 
@@ -124,7 +124,7 @@ const OrderConfirmation = () => {
           <ul>
             {cartItems.map((item) => (
               <li key={item._id}>
-                <img src={`http://localhost:3000${item.image}`} alt={item.name} className="order-item-image" />
+                <img src={`https://ecommerce-follow-along-oeux.onrender.com${item.image}`} alt={item.name} className="order-item-image" />
                 <h2>{item.name}</h2>
                 <p>Price: ${(item.price * item.quantity).toFixed(2)}</p>
                 <p>Quantity: {item.quantity}</p>

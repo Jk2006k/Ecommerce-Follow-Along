@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Navbar";
-import "./Payment.css"; // Import the new CSS file
+import "./Payment.css"; 
 
 const Payment = () => {
   const location = useLocation();
@@ -21,7 +21,7 @@ const Payment = () => {
   const handlePayment = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/api/checkout",
+        "https://ecommerce-follow-along-oeux.onrender.com/api/checkout",
         { total: orderData.total },
         {
           headers: {
@@ -102,7 +102,7 @@ const Payment = () => {
                 <li className="product-item" key={index}>
                   <img
                     className="product-image"
-                    src={`http://localhost:3000/uploads/${item.imageUrl}`}
+                    src={`https://ecommerce-follow-along-oeux.onrender.com/uploads/${item.imageUrl}`}
                     alt={item.name}
                   />
                   {item.name} - ${item.price}

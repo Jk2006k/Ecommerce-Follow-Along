@@ -14,7 +14,7 @@ const SelectAddress = () => {
 
   const fetchAddresses = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/api/profile/addresses', {
+      const response = await axios.post('https://ecommerce-follow-along-oeux.onrender.com/api/profile/addresses', {
         userEmail: localStorage.getItem('userEmail')
       });
       setAddresses(response.data.addresses);

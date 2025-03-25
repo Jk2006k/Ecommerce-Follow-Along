@@ -16,7 +16,7 @@ const Homepage = () => {
   const fetchProducts = async () => {
     try {
       console.log("Fetching products...");
-      const response = await axios.get('http://localhost:3000/forms/get', {
+      const response = await axios.get('https://ecommerce-follow-along-oeux.onrender.com/forms/get', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -31,7 +31,7 @@ const Homepage = () => {
     try {
       e.preventDefault();
       e.stopPropagation();
-      await axios.post('http://localhost:3000/cart/add', {
+      await axios.post('https://ecommerce-follow-along-oeux.onrender.com/cart/add', {
         product: product._id,
         name: product.name,
         price: product.price,
