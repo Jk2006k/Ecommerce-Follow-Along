@@ -12,7 +12,7 @@ const MyOrders = () => {
 
   const fetchUserOrders = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/api/user/orders', {
+      const response = await axios.post('https://ecommerce-follow-along-oeux.onrender.com/api/user/orders', {
         userEmail: localStorage.getItem('userEmail')
       });
       console.log('Orders fetched:', response.data.orders);
@@ -24,7 +24,7 @@ const MyOrders = () => {
 
   const handleCancelOrder = async (orderId) => {
     try {
-      const response = await axios.post('http://localhost:3000/api/order/cancel', {
+      const response = await axios.post('https://ecommerce-follow-along-oeux.onrender.com/api/order/cancel', {
         orderId
       });
       console.log('Order cancelled:', response.data.order);

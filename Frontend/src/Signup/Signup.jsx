@@ -38,7 +38,7 @@ const SignUp = () => {
     formDataToSend.append('file', formData.image);
 
     try {
-        const res = await axios.post('http://localhost:3000/api/signup', formDataToSend, {
+        const res = await axios.post('https://ecommerce-follow-along-oeux.onrender.com/api/signup', formDataToSend, {
         headers: { 'Content-Type': 'multipart/form-data' }  
       });
 

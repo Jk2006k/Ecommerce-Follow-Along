@@ -16,7 +16,7 @@ const CartPage = () => {
 
   const fetchCartItems = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/cart/items');
+      const response = await axios.get('https://ecommerce-follow-along-oeux.onrender.com/cart/items');
       console.log('Response data:', response.data); 
       console.log('Response data type:', typeof response.data); 
       console.log('Is response data an array:', Array.isArray(response.data)); 
@@ -44,7 +44,7 @@ const CartPage = () => {
         return;
       }
 
-      await axios.patch(`http://localhost:3000/cart/${action}/${id}`); 
+      await axios.patch(`https://ecommerce-follow-along-oeux.onrender.com/cart/${action}/${id}`); 
       const updatedItems = cartItems.map(item => {
         if (item._id === id) {
           const updatedQuantity = action === 'increase' ? item.quantity + 1 : item.quantity - 1;
@@ -61,7 +61,7 @@ const CartPage = () => {
 
   const removeCartItem = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/cart/remove/${id}`);
+      await axios.delete(`https://ecommerce-follow-along-oeux.onrender.com/cart/remove/${id}`);
       const updatedItems = cartItems.filter(item => item._id !== id);
       setCartItems(updatedItems);
       calculateTotalPrice(updatedItems);
@@ -89,7 +89,7 @@ const CartPage = () => {
           {cartItems.length > 0 ? (
             cartItems.map((item) => (
               <li key={item._id}>
-                <img src={`http://localhost:3000${item.image}`} alt={item.name} className="cart-item-image" />
+                <img src={`https://ecommerce-follow-along-oeux.onrender.com${item.image}`} alt={item.name} className="cart-item-image" />
                 <h2>{item.name}</h2>
                 <p>Price: ${(item.price * item.quantity).toFixed(2)}</p>
                 <p>Quantity:  

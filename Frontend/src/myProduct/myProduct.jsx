@@ -19,7 +19,7 @@ const MyProduct = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/forms/get', {
+      const response = await axios.get('/forms/get', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
@@ -37,13 +37,13 @@ const MyProduct = () => {
     if (!window.confirm('Are you sure you want to delete this product?')) return;
 
     try {
-      const response = await axios.delete(`http://localhost:3000/forms/${id}`, {
+      const response = await axios.delete(`https://ecommerce-follow-along-oeux.onrender.com/forms/${id}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
 
       if (response.status === 200) {
         setProducts((prevProducts) => prevProducts.filter((product) => product._id !== id));
-        await axios.delete(`http://localhost:3000/cart/removeProduct/${id}`);
+        await axios.delete(`https://ecommerce-follow-along-oeux.onrender.com/cart/removeProduct/${id}`);
         alert('Product deleted and removed from cart');
 
 

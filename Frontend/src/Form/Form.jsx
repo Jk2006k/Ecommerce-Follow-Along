@@ -21,7 +21,7 @@ const ProductForm = () => {
     if (id) {
       const fetchProduct = async () => {
         try {
-          const response = await fetch(`http://localhost:3000/forms/${id}`);
+          const response = await fetch(`https://ecommerce-follow-along-oeux.onrender.com/forms/${id}`);
           if (!response.ok) {
             throw new Error('Failed to fetch product details');
           }
@@ -35,7 +35,7 @@ const ProductForm = () => {
             images: [],
           });
           const imagePreviews = data.data.imgUrl.map(
-            (image) => (image.startsWith('http') ? image : `http://localhost:3000${image}`)
+            (image) => (image.startsWith('http') ? image : `https://ecommerce-follow-along-oeux.onrender.com${image}`)
           );
           setPreviewImages(imagePreviews);
         } catch (error) {
@@ -76,7 +76,7 @@ const ProductForm = () => {
     });
 
     try {
-      const response = await fetch(id ? `http://localhost:3000/forms/update/${id}` : 'http://localhost:3000/forms/create', {
+      const response = await fetch(id ? `https://ecommerce-follow-along-oeux.onrender.com/forms/update/${id}` : 'https://ecommerce-follow-along-oeux.onrender.com/forms/create', {
         method: id ? 'PUT' : 'POST',
         body: data,
       });

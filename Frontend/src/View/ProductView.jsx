@@ -37,7 +37,7 @@ const ProductView = () => {
 
   const handleAddToCart = async () => {
     try {
-      await axios.post('http://localhost:3000/cart/add', {
+      await axios.post('https://ecommerce-follow-along-oeux.onrender.com/cart/add', {
         product: product._id, 
         name: product.name,
         price: product.price,
@@ -80,7 +80,7 @@ const ProductView = () => {
           {product.imgUrl && product.imgUrl.length > 1 && (
             <button className="prev-btn" onClick={prevImage}>&#10094;</button>
           )}
-          <img src={`http://localhost:3000${product.imgUrl[currentImageIndex]}`} alt={product.name} />
+          <img src={`https://ecommerce-follow-along-oeux.onrender.com/${product.imgUrl[currentImageIndex]}`} alt={product.name} />
           {product.imgUrl && product.imgUrl.length > 1 && (
             <button className="next-btn" onClick={nextImage}>&#10095;</button>
           )}

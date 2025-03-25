@@ -592,3 +592,10 @@ This milestone focuses on implementing user authentication using JSON Web Tokens
 - Unauthorized users will be redirected to the login page.
 - Secure authentication using JWT ensures a safe user experience.
 
+---
+
+# Milestone 35- Deployment of both frontend and backend 
+
+Backend deployment link - `https://ecommerce-follow-along-oeux.onrender.com/`
+
+Frontend deplayed link - ``

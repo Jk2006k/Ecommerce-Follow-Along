@@ -34,7 +34,7 @@ const Profile = () => {
 
   const handleRemoveAddress = async (addressId) => {
     try {
-      const response = await axiosInstance.post('/profile/remove', {
+      const response = await axiosInstance.post('https://ecommerce-follow-along-oeux.onrender.com/profile/remove', {
         userEmail: email,
         addressId
       });
@@ -59,7 +59,7 @@ const Profile = () => {
         <h1 className='profile-heading'>Profile</h1>
         <p>Email: {email}</p>
         <div className="profile-section">
-          <img src={`http://localhost:3000/uploads/${userData.img}`} alt="Profile" className="profile-photo" />
+          <img src={`https://ecommerce-follow-along-oeux.onrender.com/uploads/${userData.img}`} alt="Profile" className="profile-photo" />
           <h2>{userData.name}</h2>
           <p>{userData.email}</p>
           <h2>Addresses</h2>

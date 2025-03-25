@@ -21,7 +21,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/api/login', { email, password }, {withCredentials: true});
+      const response = await axios.post('https://ecommerce-follow-along-oeux.onrender.com/api/login', { email, password }, {withCredentials: true});
       if (response.status === 200) {
         localStorage.setItem('authToken', response.data.token);
         localStorage.setItem('email', email);
