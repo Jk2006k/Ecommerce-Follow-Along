@@ -3,7 +3,7 @@ import Card from '../Homepage/productCard';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../Navbar';
-import './myProduct.css';
+import './myproduct.css';
 
 const MyProduct = () => {
   const [products, setProducts] = useState([]);
